@@ -18,8 +18,8 @@ export const GET_COINS_QUERY = gql`
 `;
 
 export const GET_COIN_DETAILS = gql`
-  query getCoinDetails($coinid: String!, $interval: String!) {
-    getCoinDetails(coinid: $coinid, interval: $interval) {
+  query getCoinDetails($coinId: String!, $interval: String!) {
+    getCoinDetails(coinId: $coinId, interval: $interval) {
       volume
       price_change
       price_change_pct

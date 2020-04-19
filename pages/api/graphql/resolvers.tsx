@@ -15,11 +15,11 @@ const resolvers = {
         },
 
         getCoinDetails: async (_, args) => {
-            const { coinid, interval } = args;
+            const { coinId, interval } = args;
 
             // fetch coin from nomics for specified interval
             const fetchCoinDetails = await nomics.currenciesTicker({
-                ids: [`${coinid}`.toUpperCase()],
+                ids: [`${coinId}`.toUpperCase()],
                 interval: [`${interval}`]
             });
 
