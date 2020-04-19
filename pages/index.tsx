@@ -4,11 +4,14 @@ import { Loader, Divider } from 'semantic-ui-react'
 import CoinsTable from '../components/Index/CoinsTable'
 import { GET_COINS_QUERY } from '../utils/queries'
 
+const FETCH_POLICY = 'network-only';
+const POLL_INTERVAL: number = 5000;
+
 export default () => {
     const { data, loading, error } = useQuery(GET_COINS_QUERY, {
-        fetchPolicy: 'network-only',
-        pollInterval: 5000,
-    })
+        fetchPolicy: FETCH_POLICY,
+        pollInterval: POLL_INTERVAL,
+    });
 
     return (
         <div>
