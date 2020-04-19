@@ -4,7 +4,7 @@ import withApollo from 'next-with-apollo';
 import { createHttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 
-const GRAPHQL_URL = '/api/graphql';
+const GRAPHQL_URL: string = '/api/graphql';
 
 const link = createHttpLink({
     fetch,
@@ -15,7 +15,6 @@ export default withApollo(
     ({ initialState }) =>
         new ApolloClient({
             link,
-            cache: new InMemoryCache()
-                .restore(initialState || {})
+            cache: new InMemoryCache().restore(initialState || {})
         })
 );
