@@ -24,6 +24,17 @@ const resolvers = {
             });
 
             return fetchCoinDetails[0][`${interval}`];
+        },
+
+        getCoin: async (_, args) => {
+            const { coinId, interval } = args;
+
+            // Default interval is set to 1 day
+            const fetchCoinDetails = await nomics.currenciesTicker({
+                ids: [`${coinId}`.toUpperCase()]
+            });
+
+            return fetchCoinDetails[0];
         }
     }
 };
