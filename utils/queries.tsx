@@ -30,3 +30,20 @@ export const GET_COIN_DETAILS = gql`
     }
   }
 `;
+
+export const GET_COIN_QUERY = gql`
+    query getCoin($coinId: String!) {
+        getCoin(coinId: $coinId) {
+            id
+            currency
+            name
+            logo_url
+            rank
+            price
+            price_date
+            market_cap
+            circulating_supply
+            max_supply
+        }
+    }
+`;
