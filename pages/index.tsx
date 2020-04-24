@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { Loader, Divider } from 'semantic-ui-react'
 import CoinsTable from '../components/Index/CoinsTable'
 import { GET_COINS_QUERY } from '../utils/queries'
+import SearchCoin from "../components/Search/SearchCoin";
 
 const FETCH_POLICY = 'network-only';
 const POLL_INTERVAL: number = 5000;
@@ -21,7 +22,10 @@ export default () => {
             {loading ? (
                 <Loader active inline="centered" content="Loading" />
             ) : (
-            <CoinsTable coins={data.getCoins} />
+                <div>
+                    <SearchCoin />
+                    <CoinsTable coins={data.getCoins} />
+                </div>
             )}
         </div>
     );
